@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <div>
+            <p class="welcome">MY PRODUCTIVITY SPACE ✨</p>
+            <h1>Task<span>Manager</span></h1>
+            <p class="subtitle">
+                Organize your tasks. Stay focused. Get things done.
+            </p>
+        </div>
+
+        <div class="date-box">
+            <p id="day">Monday</p>
+            <h3 id="date">01 Jan 2026</h3>
+        </div>
+
+    </div>
+
+
+    <!-- ADD TASK -->
+    <div class="add-card">
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter a new task..."
+        >
+
+        <button onclick="addTask()">
+            + Add Task
+        </button>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+    <div class="stats">
+
+        <div class="stat-card">
+            <div class="stat-icon purple">📋</div>
+
+            <div>
+                <p>Total Tasks</p>
+                <h2 id="total">4</h2>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon orange">⏳</div>
+
+            <div>
+                <p>Pending</p>
+                <h2 id="pending">4</h2>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon green">✓</div>
+
+            <div>
+                <p>Completed</p>
+                <h2 id="completed">0</h2>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+    <div class="progress-card">
+
+        <div class="progress-content">
+
+            <div>
+                <p>Your Progress</p>
+                <h2 id="percentage">0%</h2>
+            </div>
+
+            <div class="progress-icon">
+                🎯
+            </div>
+
+        </div>
+
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+
+        <p id="progressText">
+            Complete your tasks to increase your progress.
+        </p>
+
+    </div>
+
+
+    <!-- TASK SECTION -->
+    <div class="task-section">
+
+        <div class="task-header">
+
+            <div>
+                <h2>My Tasks</h2>
+                <p>Manage your daily activities</p>
+            </div>
+
+
+            <div class="filters">
+
+                <button
+                    id="allBtn"
+                    class="active"
+                    onclick="showAll()">
+                    All
+                </button>
+
+                <button
+                    id="pendingBtn"
+                    onclick="showPending()">
+                    Pending
+                </button>
+
+                <button
+                    id="completedBtn"
+                    onclick="showCompleted()">
+                    Completed
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- TASK LIST -->
+        <div id="taskList"></div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        Task Manager • Stay organized, stay productive 🚀
+    </footer>
+
+</div>
+
+
+<!-- UPDATE POPUP -->
+
+<div id="updateBox" class="popup">
+
+    <div class="popup-content">
+
+        <h2>Update Task</h2>
+
+        <input
+            type="text"
+            id="updateInput"
+            placeholder="Update your task"
+        >
+
+        <div class="popup-buttons">
+
+            <button onclick="saveUpdate()">
+                Save
+            </button>
+
+            <button onclick="closeUpdate()" class="cancel">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
